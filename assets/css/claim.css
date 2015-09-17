@@ -14,7 +14,7 @@
 body {
 	background:url("../img/background.png") #007eab;
 	font-family:"Lato", sans-serif;
-	font-weight:100;
+	font-weight:300;
 	text-align:center;
 	height:100%;
 }
@@ -33,7 +33,7 @@ h1, h2, h3, h4, h5, h6 { font-weight:100; }
 	position:fixed;
 	top:40px;
 	left:0;
-	z-index:100;
+	z-index:99;
 }
 
 .logo img { width:140px; }
@@ -41,7 +41,7 @@ h1, h2, h3, h4, h5, h6 { font-weight:100; }
 .claim {
 	position:fixed;
 	left:50%;
-	top:290px;
+	top:250px;
 }
 
 .claim img {
@@ -49,8 +49,15 @@ h1, h2, h3, h4, h5, h6 { font-weight:100; }
 	width:108px;
 }
 
+.down {
+	margin-left:-20px;
+	position:fixed;
+	bottom:16px;
+	left:50%;
+}
+
 .page {
-	margin-top:400px;
+	margin-top:600px;
 	position:relative;
 	text-align:center;
 }
@@ -61,8 +68,6 @@ h1, h2, h3, h4, h5, h6 { font-weight:100; }
 	left:0;
 	z-index:100;
 }
-
-.flag1 { top:-100px; }
 
 .flag span {
 	background:#ebab00;
@@ -111,6 +116,8 @@ h1 small {
 	font-weight:300;
 	margin-top:0;
 }
+
+.info p { font-size:1.25em; }
 
 .buttons {
 	margin-right:-20px;
@@ -184,11 +191,11 @@ h1 small {
 }
 
 .coding-advisor {
-	padding-right:80px;
+	padding-right:40px;
 	position:absolute;
 	top:33%;
 	right:-100%;
-	width:380px;
+	width:400px;
 }
 
 .building-emdeon {
@@ -205,11 +212,11 @@ h1 small {
 }
 
 .pre-payment {
-	padding-left:60px;
+	padding-left:40px;
 	position:absolute;
 	top:33%;
 	left:-100%;
-	width:380px;
+	width:460px;
 }
 
 .building-insurance {
@@ -237,7 +244,15 @@ h1 small {
 .doctor-paid {
 	margin-left:-180px;
 	position:absolute;
-	top:490px;
+	top:440px;
+	left:0%;
+	width:160px;
+}
+
+.doctor-repaid {
+	margin-left:-260px;
+	position:absolute;
+	top:120px;
 	left:0%;
 	width:160px;
 }
@@ -259,11 +274,11 @@ h1 small {
 }
 
 .post-pay {
-	padding-right:60px;
+	padding-right:40px;
 	position:absolute;
 	top:33%;
 	right:-100%;
-	width:380px;
+	width:420px;
 }
 
 .congrats {
@@ -271,7 +286,21 @@ h1 small {
 	position:absolute;
 	top:0;
 	right:-100%;
-	margin-bottom:400px;
+}
+
+.try-again {
+	color:#c9e3ed;
+	font-size:1.25em;
+	padding:20px 60px 20px 20px;
+	position:absolute;
+	top:78px;
+	right:-100%;
+}
+
+.try-again:hover {
+	background:#00487a;
+	color:#fff;
+	text-decoration:none;
 }
 
 .callout {

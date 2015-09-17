@@ -3,69 +3,73 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Lifecycle of a Claim</title>
-    <meta name="description" content="">
+    <title>Lifecycle of a Claim | Emdeon</title>
+    <meta name="description" content="Emdeon presents the lifecycle of a claim">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,100italic,700italic">
     <link rel="stylesheet" href="assets/css/claim.css">
+    <link rel="icon" href="assets/img/favicon.png">
 </head>
 <body>
     <div class="claim-position" style="display:none"></div>
     <div id="lifecycle">
         <div class="logo">
             <a href="http://www.emdeon.com" target="_blank"><img src="assets/img/emdeon.png" alt=""></a>
-            <div class="flag flag1" data-offset-min="0" data-offset-max="1194"><span>Payment Integrity</span></div>
+            <div class="flag flag1 affix"><span>Payment Integrity</span></div>
         </div>
         <div class="claim" data-show="default">
             <!-- Default -->
-            <img class="claim-paper default approved approved-verified approved-flagged denied denied-verified denied-flagged approved-flagged approved-corrected approved-repaid approved-appealed denied-flagged denied-corrected denied-repaid denied-appealed" src="assets/img/claim-paper.png" data-offset-min="0" data-offset-max="1194" alt="">
-            <img class="claim-tablet default approved approved-verified approved-flagged denied denied-verified denied-flagged approved-flagged approved-corrected approved-repaid approved-appealed denied-flagged denied-corrected denied-repaid denied-appealed" src="assets/img/claim-tablet.png" data-offset-min="1194" data-offset-max="2168" alt="" style="display:none">
-            <img class="claim-digital default approved approved-verified approved-flagged denied denied-verified denied-flagged approved-flagged approved-corrected approved-repaid approved-appealed denied-flagged denied-corrected denied-repaid denied-appealed" src="assets/img/claim-digital.png" data-offset-min="2168" data-offset-max="2830" alt="" style="display:none">
+            <img src="assets/img/claim-paper.png"          data-claim-reveal="body|0|.hospital|0"                                                                                                        class="claim-paper default approved approved-verified approved-flagged denied denied-verified denied-flagged approved-flagged approved-corrected approved-repaid approved-appealed denied-flagged denied-corrected denied-repaid denied-appealed" alt="">
+            <img src="assets/img/claim-tablet.png"         data-claim-reveal=".hospital|0|.computer|218"                                                                                                 class="claim-tablet default approved approved-verified approved-flagged denied denied-verified denied-flagged approved-flagged approved-corrected approved-repaid approved-appealed denied-flagged denied-corrected denied-repaid denied-appealed" alt="" style="display:none">
+            <img src="assets/img/claim-digital.png"        data-claim-reveal=".computer|218|.building-emdeon|27"                                                                                         class="claim-digital default approved approved-verified approved-flagged denied denied-verified denied-flagged approved-flagged approved-corrected approved-repaid approved-appealed denied-flagged denied-corrected denied-repaid denied-appealed" alt="" style="display:none">
             <!-- Approved -->
-            <img class="claim-approved approved approved-verified approved-flagged approved-corrected approved-repaid approved-appealed" src="assets/img/claim-approved.png" data-offset-min="2830" data-offset-max="3618" alt="" style="display:none" data-confirm=".confirm-approve-deny">
-            <img class="claim-paid approved approved-verified approved-flagged approved-corrected approved-repaid approved-appealed" src="assets/img/claim-paid.png" data-offset-min="3618" data-offset-max="4762" alt="" style="display:none">
-            <img class="claim-approved-verified approved-verified" src="assets/img/claim-verified.png" data-offset-min="4762" data-offset-max="6100" alt="" style="display:none" data-confirm=".confirm-approve-verify-flag">
+            <img src="assets/img/claim-approved.png"       data-claim-reveal=".building-emdeon|27|.building-insurance-approved|28"                           data-confirm=".confirm-approve-deny"        class="claim-approved approved approved-verified approved-flagged approved-corrected approved-repaid approved-appealed" alt="" style="display:none">
+            <img src="assets/img/claim-paid.png"           data-claim-reveal=".building-insurance-approved|28|.building-insurance-approved-post-pay|28"                                                  class="claim-paid approved approved-verified approved-flagged approved-corrected approved-repaid approved-appealed" alt="" style="display:none">
+            <img src="assets/img/claim-verified.png"       data-claim-reveal=".building-insurance-approved-post-pay|28|.fin-approved-verified|0"             data-confirm=".confirm-approve-verify-flag" class="claim-approved-verified approved-verified" alt="" style="display:none">
+            <!-- Approved + Flagged -->
+            <img src="assets/img/claim-flagged.png"        data-claim-reveal=".building-insurance-approved-post-pay|28|#claim-approved-flagged|10"           data-confirm=".confirm-approve-verify-flag" class="claim-approved-flagged approved-flagged approved-corrected approved-repaid approved-appealed" alt="" style="display:none">
+            <img src="assets/img/claim-flagged-fixed.png"  data-claim-reveal="#claim-approved-flagged|10|.fin-approved-correction|0"                                                                        class="claim-approved-corrected approved-corrected" alt="" style="display:none">
+            <img src="assets/img/claim-flagged-repaid.png" data-claim-reveal="#claim-approved-flagged|10|.fin-approved-repayment|0"                                                                        class="claim-approved-repaid approved-repaid" alt="" style="display:none">
+            <img src="assets/img/claim-flagged-appeal.png" data-claim-reveal="#claim-approved-flagged|10|.fin-approved-appeal|0"                                                                        class="claim-approved-appealed approved-appealed" alt="" style="display:none">
             <!-- Denied -->
-            <img class="claim-denied denied denied-verified denied-flagged denied-flagged denied-corrected denied-repaid denied-appealed" src="assets/img/claim-denied.png" data-offset-min="2880" data-offset-max="3615" alt="" style="display:none" data-confirm=".confirm-approve-deny">
-            <img class="claim-errors denied denied-verified denied-flagged denied-flagged denied-corrected denied-repaid denied-appealed" src="assets/img/claim-errors.png" data-offset-min="3615" data-offset-max="4354" alt="" style="display:none">
-            <img class="claim-revised denied denied-verified denied-flagged denied-flagged denied-corrected denied-repaid denied-appealed" src="assets/img/claim-revised.png" data-offset-min="4354" data-offset-max="5115" alt="" style="display:none">
-            <img class="claim-paid denied denied-verified denied-flagged denied-flagged denied-corrected denied-repaid denied-appealed" src="assets/img/claim-paid.png" data-offset-min="5115" data-offset-max="6265" alt="" style="display:none">
-            <img class="claim-denied-verified denied-verified" src="assets/img/claim-verified.png" data-offset-min="6265" data-offset-max="7510" alt="" style="display:none" data-confirm=".confirm-deny-verify-flag">
-            <!-- Flagged -->
-            <img class="claim-approved-flagged approved-flagged approved-corrected approved-repaid approved-appealed" src="assets/img/claim-flagged.png" data-offset-min="4762" data-offset-max="5526" alt="" style="display:none" data-confirm=".confirm-approve-verify-flag">
-            <img class="claim-approved-corrected approved-corrected" src="assets/img/claim-flagged-fixed.png" data-offset-min="5526" data-offset-max="6300" alt="" style="display:none">
-            <img class="claim-approved-repaid approved-repaid" src="assets/img/claim-flagged-repaid.png" data-offset-min="5526" data-offset-max="6600" alt="" style="display:none">
-            <img class="claim-approved-appealed approved-appealed" src="assets/img/claim-flagged-appeal.png" data-offset-min="5526" data-offset-max="6300" alt="" style="display:none">
-            <img class="claim-denied-flagged denied-flagged denied-corrected denied-repaid denied-appealed" src="assets/img/claim-flagged.png" data-offset-min="6265" data-offset-max="7026" alt="" style="display:none" data-confirm=".confirm-deny-verify-flag">
-            <img class="claim-denied-corrected denied-corrected" src="assets/img/claim-flagged-fixed.png" data-offset-min="7026" data-offset-max="7900" alt="" style="display:none">
-            <img class="claim-denied-repaid denied-repaid" src="assets/img/claim-flagged-repaid.png" data-offset-min="7026" data-offset-max="8100" alt="" style="display:none">
-            <img class="claim-denied-appealed denied-appealed" src="assets/img/claim-flagged-appeal.png" data-offset-min="7026" data-offset-max="7900" alt="" style="display:none">
+            <img src="assets/img/claim-denied.png"         data-claim-reveal=".building-emdeon|27|.building-insurance-denied|28"                             data-confirm=".confirm-approve-deny"        class="claim-denied denied denied-verified denied-flagged denied-flagged denied-corrected denied-repaid denied-appealed" alt="" style="display:none">
+            <img src="assets/img/claim-errors.png"         data-claim-reveal=".building-insurance-denied|28|.doctor-wrench|4"                                                                            class="claim-errors denied denied-verified denied-flagged denied-flagged denied-corrected denied-repaid denied-appealed" alt="" style="display:none">
+            <img src="assets/img/claim-revised.png"        data-claim-reveal=".doctor-wrench|4|.building-insurance-denied-approved|28"                                                                   class="claim-revised denied denied-verified denied-flagged denied-flagged denied-corrected denied-repaid denied-appealed" alt="" style="display:none">
+            <img src="assets/img/claim-paid.png"           data-claim-reveal=".building-insurance-denied-approved|28|.building-insurance-denied-post-pay|28"                                             class="claim-paid denied denied-verified denied-flagged denied-flagged denied-corrected denied-repaid denied-appealed" alt="" style="display:none">
+            <img src="assets/img/claim-verified.png"       data-claim-reveal=".building-insurance-denied-post-pay|28|.fin-denied-verified|0"                 data-confirm=".confirm-deny-verify-flag"    class="claim-denied-verified denied-verified" alt="" style="display:none">
+            <!-- Denied + Flagged -->
+            <img src="assets/img/claim-flagged.png"        data-claim-reveal=".building-insurance-denied-post-pay|28|#claim-denied-flagged|10"                                                     data-confirm=".confirm-deny-verify-flag"    class="claim-denied-flagged denied-flagged denied-corrected denied-repaid denied-appealed" alt="" style="display:none">
+            <img src="assets/img/claim-flagged-fixed.png"  data-claim-reveal="#claim-denied-flagged|10|.fin-denied-correction|0"                                                                                                 class="claim-denied-corrected denied-corrected" alt="" style="display:none">
+            <img src="assets/img/claim-flagged-repaid.png" data-claim-reveal="#claim-denied-flagged|10|.fin-denied-repayment|0"                                                                                                 class="claim-denied-repaid denied-repaid" alt="" style="display:none">
+            <img src="assets/img/claim-flagged-appeal.png" data-claim-reveal="#claim-denied-flagged|10|.fin-denied-appeal|0"                                                                                                 class="claim-denied-appealed denied-appealed" alt="" style="display:none">
         </div>
-        <h1>The Lifecycle of a Claim: <small>&nbsp;</small></h1>
+        <h1>The Lifecycle of a Claim <small>&nbsp;</small></h1>
         <div class="info" style="margin-top:220px; width:580px">
             <h2 style="margin-bottom:20px"><em>What is End-to-End Risk Mitigation?</em></h2>
             <p>With our unique Intelligent Healthcare Network, Emdeon takes advantage of savings opportunities at every stage of the claim lifecycle.</p>
             <p style="margin-bottom:0">Scroll down to follow the claim and see for yourself!</p>
         </div>
-        <div class="page" style="margin-top:370px">
-            <div class="flag" data-offset-min="1194" data-offset-max="2020"><span>Patient Access</span></div>
+        <a class="down" href="#"><img src="assets/img/chevron-down.png" alt=""></a>
+        <div class="page">
+            <div class="flag"><span>Patient Access</span></div>
             <img class="hospital" src="assets/img/hospital.png">
             <a href="#transactions" class="marker" style="top:198px; margin-left:-210px"><img src="assets/img/marker.png"><span>+</span></a>
             <div id="transactions" style="width:400px; top:270px; margin-left:-600px">In 2014, Emdeon processed 8 billion transactions  and $1 trillion in claims value.</div>
             <img class="doctor-patient" data-animation="50%" data-animation-right="1" src="assets/img/doctor-patient.png">
         </div>
         <div class="page">
-            <div class="flag" data-offset-min="2020" data-offset-max="2874"><span>Pre-Submission</span></div>
+            <div class="flag"><span>Pre-Submission</span></div>
             <img class="computer" src="assets/img/computer.png">
             <a href="#oig-errors" class="marker" style="top:96px; margin-left:-181px"><img src="assets/img/marker.png"><span>+</span></a>
             <div id="oig-errors" style="width:400px; top:200px; margin-left:-575px">The OIG attributes approximately $11Billion to E/M billing errors during 2001-2010.<sup>1</sup></div>
             <div class="info coding-advisor" data-animation="0%" data-animation-right="1">
-                <h2><em>Coding Advisor</em></h2>
-                <p>by addressing aberrant billing practices, future claims are correctly coded before submission, allowing payers to avoid unnecessary costs</p>
+                <h2><em>Emdeon Coding Advisor</em></h2>
+                <p> MultiPayer Analytics and a sequenced process that benchmarks provider billing, educates provider and monitors future billing, in the Pre-Submission stage of the lifecycle, to reduce unnecessary costs from inappropriate billing. </p>
+				<!-- <p>by addressing aberrant billing practices, future claims are correctly coded before submission, allowing payers to avoid unnecessary costs</p> -->
             </div>
         </div>
         <div class="page">
-            <div class="flag" data-offset-min="2874" data-offset-max="3710"><span>Pre-Payment</span></div>
+            <div class="flag"><span>Pre-Payment</span></div>
             <img class="building-emdeon" src="assets/img/building-emdeon.png">
             <img src="assets/img/emdeon.png" alt="">
             <a href="#healthcare-fraud" class="marker" style="top:328px; margin-left:88px"><img src="assets/img/marker.png"><span>+</span></a>
@@ -75,18 +79,18 @@
                 <p>By closely monitoring and identifying aberrant claims through code edits, the application of investigative rules and multi-payer analytics, and early detection of anomalies, payers can detect outliers and combat costs prior to issuing payment</p>
             </div>
         </div>
-        <div class="info confirm-approve-deny" style="font-size:16px; margin-top:180px; margin-bottom:280px; padding-bottom:40px; width:250px">
+        <div class="info confirm-approve-deny" style="font-size:16px; margin-top:180px; margin-bottom:280px; padding-bottom:40px; width:300px">
             <p>At this point the claim is either approved or denied. Please choose which path you would like to explore.</p>
             <div class="buttons two">
-                <a class="choose" data-offset="3200" data-claim=".claim-approved" data-claim-parent="approved" href="#claim-approved">APPROVED</a>
-                <a class="choose" data-offset="3200" data-claim=".claim-denied"   data-claim-parent="denied"   href="#claim-denied">DENIED</a>
+                <a class="choose" data-offset=".building-insurance-approved" data-claim=".claim-approved" data-claim-parent="approved" href="#claim-approved">APPROVED</a>
+                <a class="choose" data-offset=".building-insurance-denied" data-claim=".claim-denied"   data-claim-parent="denied"   href="#claim-denied">DENIED</a>
             </div>
         </div>
         <!-- Claim approved -->
         <div id="claim-approved" style="display:none">
             <div class="page">
-                <div class="flag" data-offset-min="3710" data-offset-max="4865"><span>Patient Billing &amp; Payment</span></div>
-                <img class="building-insurance" src="assets/img/building-insurance.png" style="margin-bottom:300px">
+                <div class="flag"><span>Patient Billing &amp; Payment</span></div>
+                <img class="building-insurance building-insurance-approved" src="assets/img/building-insurance.png" style="margin-bottom:300px">
                 <span>Insurance Company / Payer</span>
                 <a href="#emdeon-payers" class="marker" style="top:148px; margin-left:152px"><img src="assets/img/marker.png"><span>+</span></a>
                 <div id="emdeon-payers" style="width:380px; top:204px; margin-left:183px">Emdeon connects to 5,000 hospitals, 700,000 providers, 450 labs,60,000 pharmacies and 1,200 payers, leveraging big-data and insights.</div>
@@ -95,8 +99,8 @@
                 <img class="patient-eob" src="assets/img/patient-eob.png" data-animation="50%" data-animation-right="1">
             </div>
             <div class="page">
-                <div class="flag" data-offset-min="4863" data-offset-max="5715"><span>Post-Payment</span></div>
-                <img class="building-insurance" src="assets/img/building-insurance.png">
+                <div class="flag"><span>Post-Payment</span></div>
+                <img class="building-insurance building-insurance-approved-post-pay" src="assets/img/building-insurance.png">
                 <span>Insurance Company / Payer</span>
                 <a href="#fraud-judgements" class="marker" style="top:69px; margin-left:-76px"><img src="assets/img/marker.png"><span>+</span></a>
                 <div id="fraud-judgements" style="width:380px; top:170px; margin-left:-449px">In 2014, the Federal government settled over $2.3 billion in healthcare fraud judgements.<sup>3</sup></div>
@@ -108,29 +112,30 @@
             <div class="info confirm-approve-verify-flag" style="font-size:16px; margin-top:180px; margin-bottom:280px; padding-bottom:40px; width:330px">
                 <p>After a claim is paid, it may be audited and verified or flagged. A claim may also be flagged for investigation. Please choose which path you would like to explore.</p>
                 <div class="buttons two">
-                    <a class="choose" data-offset="5310" data-claim=".claim-approved-verified" data-claim-parent="approved-verified" href="#claim-approved-verified">VERIFIED</a>
-                    <a class="choose" data-offset="5110" data-claim=".claim-approved-flagged"  data-claim-parent="approved-flagged"  href="#claim-approved-flagged">FLAGGED</a>
+                    <a class="choose" data-offset="#claim-approved-verified" data-claim=".claim-approved-verified" data-claim-parent="approved-verified" href="#claim-approved-verified">VERIFIED</a>
+                    <a class="choose" data-offset="#claim-approved-flagged" data-claim=".claim-approved-flagged"  data-claim-parent="approved-flagged"  href="#claim-approved-flagged">FLAGGED</a>
                 </div>
             </div>
             <!-- Approved + Verified -->
             <div id="claim-approved-verified" style="display:none">
                 <div class="page">
-                    <div class="flag" data-offset-min="5715" data-offset-max="7000"><span>Verified</span></div>
+                    <div class="flag"><span>Verified</span></div>
                     <div class="info congrats" data-animation="0%" data-animation-right="1">
                         <p style="margin-bottom:0"><img src="assets/img/green-check.png" style="margin-right:10px; width:30px">Congratulations, your claim has completed its lifecycle!</p>
                     </div>
+                    <a class="info try-again" href="http://www.lifecycleofaclaim.com" data-animation="0%" data-animation-right="1"><img src="assets/img/refresh.png" style="width:30px"><span style="padding-left:10px">Try another path</span></a>
                     <div class="fin">
                         <div class="callout">
                             <p>Are you mitigating risk at every stage of the lifecycle?</p>
                         </div>
-                        <div class="info">
+                        <div class="info fin-approved-verified">
                             <p>Emdeon&rsquo;s Intelligent Healthcare Network provides unique insights to help you make the most informed decisions available.</p>
                             <p>Let Emdeon help you avoid lost profits, reduce administrative time and cost, find lost dollars, capture new savings and maintain a strong provider network.</p>
                             <p>Find out more about our Payment Integrity solutions:</p>
                             <br>
-                            <a href="#" class="button" target="_blank">Pre-Submission</a>
-                            <a href="#" class="button" target="_blank">Post-Submission</a>
-                            <a href="#" class="button" target="_blank">Post-Payment</a>
+                            <a href="http://www.emdeon.com/advisor" class="button" target="_blank">Pre-Submission</a>
+                            <a href="http://www.emdeon.com/integratedrepricing" class="button" target="_blank">Post-Submission</a>
+                            <a href="http://www.emdeon.com/auditandrecovery" class="button" target="_blank">Post-Payment</a>
                             <br>
                             <a href="https://www.linkedin.com/company/emdeon_3855" target="blank"><img src="assets/img/linkedin.png" alt="LinkedIn"></a>
                             <a href="https://twitter.com/emdeon" target="blank"><img src="assets/img/twitter.png" alt="Twitter"></a>
@@ -147,32 +152,34 @@
             <!-- Approved + Flagged -->
             <div id="claim-approved-flagged" style="display:none">
                 <div class="page">
-                    <div class="flag" data-offset-min="5715" data-offset-max="7000"><span>Flagged</span></div>
+                    <div class="flag"><span>Flagged</span></div>
                     <div class="info confirm-flag-correct" style="font-size:16px; margin-top:180px; margin-bottom:300px; padding-bottom:40px; width:435px">
                         <p>Please choose one of three corrective options:</p>
                         <div class="buttons three">
-                            <a class="choose" data-offset="5600" data-claim=".claim-approved-flagged" data-claim-parent="approved-corrected" href="#claim-approved-correction">Claim correction</a>
-                            <a class="choose" data-offset="5840" data-claim=".claim-approved-flagged" data-claim-parent="approved-repaid"  href="#claim-approved-repayment">Repayment</a>
-                            <a class="choose" data-offset="5600" data-claim=".claim-approved-flagged" data-claim-parent="approved-appealed" href="#claim-approved-appeal">Provider Appeal</a>
+                            <a class="choose" data-offset="#claim-approved-correction" data-claim=".claim-approved-flagged" data-claim-parent="approved-corrected" href="#claim-approved-correction">Claim correction</a>
+                            <a class="choose" data-offset="#claim-approved-repayment" data-claim=".claim-approved-flagged" data-claim-parent="approved-repaid"  href="#claim-approved-repayment">Repayment</a>
+                            <a class="choose" data-offset="#claim-approved-appeal" data-claim=".claim-approved-flagged" data-claim-parent="approved-appealed" href="#claim-approved-appeal">Provider Appeal</a>
                         </div>
                     </div>
                     <div id="claim-approved-correction" style="display:none">
-                        <div class="info congrats" data-animation="0%" data-animation-right="1" style="top:400px">
+                        <div class="flag"><span>Claim correction</span></div>
+                        <div class="info congrats" data-animation="0%" data-animation-right="1" style="margin-top:700px">
                             <p style="margin-bottom:0"><img src="assets/img/green-check.png" style="margin-right:10px; width:30px">Congratulations, your claim has completed its lifecycle!</p>
                         </div>
-                        <img src="assets/img/doctor-wrench.png" style="width:160px">
-                        <div class="fin">
+                        <a class="info try-again" href="http://www.lifecycleofaclaim.com" data-animation="0%" data-animation-right="1" style="margin-top:700px"><img src="assets/img/refresh.png" style="width:30px"><span style="padding-left:10px">Try another path</span></a>
+                        <img src="assets/img/doctor-wrench.png" style="margin-bottom:300px; width:160px">
+                        <div class="fin" style="margin-top:200px">
                             <div class="callout">
                                 <p>Are you mitigating risk at every stage of the lifecycle?</p>
                             </div>
-                            <div class="info">
+                            <div class="info fin-approved-correction">
                                 <p>Emdeon&rsquo;s Intelligent Healthcare Network provides unique insights to help you make the most informed decisions available.</p>
                                 <p>Let Emdeon help you avoid lost profits, reduce administrative time and cost, find lost dollars, capture new savings and maintain a strong provider network.</p>
                                 <p>Find out more about our Payment Integrity solutions:</p>
                                 <br>
-                                <a href="#" class="button" target="_blank">Pre-Submission</a>
-                                <a href="#" class="button" target="_blank">Post-Submission</a>
-                                <a href="#" class="button" target="_blank">Post-Payment</a>
+                                <a href="http://www.emdeon.com/advisor" class="button" target="_blank">Pre-Submission</a>
+                                <a href="http://www.emdeon.com/integratedrepricing" class="button" target="_blank">Post-Submission</a>
+                                <a href="http://www.emdeon.com/auditandrecovery" class="button" target="_blank">Post-Payment</a>
                                 <br>
                                 <a href="https://www.linkedin.com/company/emdeon_3855" target="blank"><img src="assets/img/linkedin.png" alt="LinkedIn"></a>
                                 <a href="https://twitter.com/emdeon" target="blank"><img src="assets/img/twitter.png" alt="Twitter"></a>
@@ -186,23 +193,25 @@
                         </div>
                     </div>
                     <div id="claim-approved-repayment" style="display:none">
-                        <div class="info congrats" data-animation="0%" data-animation-right="1" style="top:600px">
+                        <div class="flag"><span>Repayment</span></div>
+                        <div class="info congrats" data-animation="0%" data-animation-right="1" style="margin-top:700px">
                             <p style="margin-bottom:0"><img src="assets/img/green-check.png" style="margin-right:10px; width:30px">Congratulations, your claim has completed its lifecycle!</p>
                         </div>
-                        <img class="building-insurance" src="assets/img/building-insurance.png" style="margin-top:48px; margin-bottom:300px">
-                        <img class="doctor-paid" src="assets/img/doctor-repaid.png" data-animation="50%" data-animation-left>
-                        <div class="fin" style="padding-top:200px">
+                        <a class="info try-again" href="http://www.lifecycleofaclaim.com" data-animation="0%" data-animation-right="1" style="margin-top:700px"><img src="assets/img/refresh.png" style="width:30px"><span style="padding-left:10px">Try another path</span></a>
+                        <img class="building-insurance" src="assets/img/building-insurance.png" style="margin-top:-10px; margin-bottom:300px">
+                        <img class="doctor-repaid" src="assets/img/doctor-repaid.png" data-animation="50%" data-animation-left>
+                        <div class="fin" style="margin-top:200px">
                             <div class="callout">
                                 <p>Are you mitigating risk at every stage of the lifecycle?</p>
                             </div>
-                            <div class="info">
+                            <div class="info fin-approved-repayment">
                                 <p>Emdeon&rsquo;s Intelligent Healthcare Network provides unique insights to help you make the most informed decisions available.</p>
                                 <p>Let Emdeon help you avoid lost profits, reduce administrative time and cost, find lost dollars, capture new savings and maintain a strong provider network.</p>
                                 <p>Find out more about our Payment Integrity solutions:</p>
                                 <br>
-                                <a href="#" class="button" target="_blank">Pre-Submission</a>
-                                <a href="#" class="button" target="_blank">Post-Submission</a>
-                                <a href="#" class="button" target="_blank">Post-Payment</a>
+                                <a href="http://www.emdeon.com/advisor" class="button" target="_blank">Pre-Submission</a>
+                                <a href="http://www.emdeon.com/integratedrepricing" class="button" target="_blank">Post-Submission</a>
+                                <a href="http://www.emdeon.com/auditandrecovery" class="button" target="_blank">Post-Payment</a>
                                 <br>
                                 <a href="https://www.linkedin.com/company/emdeon_3855" target="blank"><img src="assets/img/linkedin.png" alt="LinkedIn"></a>
                                 <a href="https://twitter.com/emdeon" target="blank"><img src="assets/img/twitter.png" alt="Twitter"></a>
@@ -216,22 +225,24 @@
                         </div>
                     </div>
                     <div id="claim-approved-appeal" style="display:none">
-                        <div class="info congrats" data-animation="0%" data-animation-right="1" style="top:400px">
+                        <div class="flag"><span>Provider appeal</span></div>
+                        <div class="info congrats" data-animation="0%" data-animation-right="1" style="margin-top:700px">
                             <p style="margin-bottom:0"><img src="assets/img/green-check.png" style="margin-right:10px; width:30px">Congratulations, your claim has completed its lifecycle!</p>
                         </div>
-                        <img src="assets/img/doctor-scales.png" style="width:160px">
-                        <div class="fin">
+                        <a class="info try-again" href="http://www.lifecycleofaclaim.com" data-animation="0%" data-animation-right="1" style="margin-top:700px"><img src="assets/img/refresh.png" style="width:30px"><span style="padding-left:10px">Try another path</span></a>
+                        <img src="assets/img/doctor-speech.png" style="margin-bottom:300px;width:160px">
+                        <div class="fin" style="margin-top:200px;">
                             <div class="callout">
                                 <p>Are you mitigating risk at every stage of the lifecycle?</p>
                             </div>
-                            <div class="info">
+                            <div class="info fin-approved-appeal">
                                 <p>Emdeon&rsquo;s Intelligent Healthcare Network provides unique insights to help you make the most informed decisions available.</p>
                                 <p>Let Emdeon help you avoid lost profits, reduce administrative time and cost, find lost dollars, capture new savings and maintain a strong provider network.</p>
                                 <p>Find out more about our Payment Integrity solutions:</p>
                                 <br>
-                                <a href="#" class="button" target="_blank">Pre-Submission</a>
-                                <a href="#" class="button" target="_blank">Post-Submission</a>
-                                <a href="#" class="button" target="_blank">Post-Payment</a>
+                                <a href="http://www.emdeon.com/advisor" class="button" target="_blank">Pre-Submission</a>
+                                <a href="http://www.emdeon.com/integratedrepricing" class="button" target="_blank">Post-Submission</a>
+                                <a href="http://www.emdeon.com/auditandrecovery" class="button" target="_blank">Post-Payment</a>
                                 <br>
                                 <a href="https://www.linkedin.com/company/emdeon_3855" target="blank"><img src="assets/img/linkedin.png" alt="LinkedIn"></a>
                                 <a href="https://twitter.com/emdeon" target="blank"><img src="assets/img/twitter.png" alt="Twitter"></a>
@@ -250,8 +261,8 @@
         <!-- Claim Denied -->
         <div id="claim-denied" style="display:none">
             <div class="page">
-                <div class="flag" data-offset-min="3710" data-offset-max="6364"><span>Patient Billing &amp; Payment</span></div>
-                <img class="building-insurance" src="assets/img/building-insurance.png">
+                <div class="flag"><span>Patient Billing &amp; Payment</span></div>
+                <img class="building-insurance building-insurance-denied" src="assets/img/building-insurance.png">
                 <span>Insurance Company / Payer</span>
                 <a href="#denied-emdeon-payers" class="marker" style="top:148px; margin-left:152px"><img src="assets/img/marker.png"><span>+</span></a>
                 <div id="denied-emdeon-payers" style="width:380px; top:204px; margin-left:183px">Emdeon connects to 5,000 hospitals, 700,000 providers, 450 labs,60,000 pharmacies and 1,200 payers, leveraging big-data and insights.</div>
@@ -259,15 +270,15 @@
                 <img class="doctor-wrench" src="assets/img/doctor-wrench.png" data-animation="50%" data-animation-left>
             </div>
             <div class="page">
-                <img class="building-insurance" src="assets/img/building-insurance.png" style="margin-bottom:300px">
+                <img class="building-insurance building-insurance-denied-approved" src="assets/img/building-insurance.png" style="margin-bottom:300px">
                 <span>Insurance Company / Payer</span>
                 <img class="green-check" src="assets/img/green-check.png" style="margin-left:-32px; top:160px">
                 <img class="doctor-paid" src="assets/img/doctor-paid.png" data-animation="50%" data-animation-left>
                 <img class="patient-eob" src="assets/img/patient-eob.png" data-animation="50%" data-animation-right="1">
             </div>
             <div class="page">
-                <div class="flag" data-offset-min="6364" data-offset-max="8000"><span>Post-Payment</span></div>
-                <img class="building-insurance" src="assets/img/building-insurance.png">
+                <div class="flag"><span>Post-Payment</span></div>
+                <img class="building-insurance building-insurance-denied-post-pay" src="assets/img/building-insurance.png">
                 <span>Insurance Company / Payer</span>
                 <a href="#denied-fraud-judgements" class="marker" style="top:69px; margin-left:-76px"><img src="assets/img/marker.png"><span>+</span></a>
                 <div id="denied-fraud-judgements" style="width:380px; top:170px; margin-left:-449px">In 2014, the Federal government settled over $2.3Billion in healthcare fraud judgements.</div>
@@ -279,29 +290,30 @@
             <div class="info confirm-deny-verify-flag" style="font-size:16px; margin-top:180px; margin-bottom:280px; padding-bottom:40px; width:330px">
                 <p>After a claim is paid, it may be audited and verified or flagged. A claim may also be flagged for investigation. Please choose which path you would like to explore.</p>
                 <div class="buttons two">
-                    <a class="choose" data-offset="6925" data-claim=".claim-denied-verified" data-claim-parent="denied-verified" href="#claim-denied-verified">VERIFIED</a>
-                    <a class="choose" data-offset="6610" data-claim=".claim-denied-flagged"  data-claim-parent="denied-flagged"  href="#claim-denied-flagged">FLAGGED</a>
+                    <a class="choose" data-offset="#claim-denied-verified" data-claim=".claim-denied-verified" data-claim-parent="denied-verified" href="#claim-denied-verified">VERIFIED</a>
+                    <a class="choose" data-offset="#claim-denied-flagged" data-claim=".claim-denied-flagged"  data-claim-parent="denied-flagged"  href="#claim-denied-flagged">FLAGGED</a>
                 </div>
             </div>
             <!-- Denied + Verified -->
             <div id="claim-denied-verified" style="display:none">
                 <div class="page">
-                    <div class="flag" data-offset-min="7215" data-offset-max="9000"><span>Verified</span></div>
+                    <div class="flag"><span>Verified</span></div>
                     <div class="info congrats" data-animation="0%" data-animation-right="1">
                         <p style="margin-bottom:0"><img src="assets/img/green-check.png" style="margin-right:10px; width:30px">Congratulations, your claim has completed its lifecycle!</p>
                     </div>
+                    <a class="info try-again" href="http://www.lifecycleofaclaim.com" data-animation="0%" data-animation-right="1"><img src="assets/img/refresh.png" style="width:30px"><span style="padding-left:10px">Try another path</span></a>
                     <div class="fin">
                         <div class="callout">
                             <p>Are you mitigating risk at every stage of the lifecycle?</p>
                         </div>
-                        <div class="info">
+                        <div class="info fin-denied-verified">
                             <p>Emdeon&rsquo;s Intelligent Healthcare Network provides unique insights to help you make the most informed decisions available.</p>
                             <p>Let Emdeon help you avoid lost profits, reduce administrative time and cost, find lost dollars, capture new savings and maintain a strong provider network.</p>
                             <p>Find out more about our Payment Integrity solutions:</p>
                             <br>
-                            <a href="#" class="button" target="_blank">Pre-Submission</a>
-                            <a href="#" class="button" target="_blank">Post-Submission</a>
-                            <a href="#" class="button" target="_blank">Post-Payment</a>
+                            <a href="http://www.emdeon.com/advisor" class="button" target="_blank">Pre-Submission</a>
+                            <a href="http://www.emdeon.com/integratedrepricing" class="button" target="_blank">Post-Submission</a>
+                            <a href="http://www.emdeon.com/auditandrecovery" class="button" target="_blank">Post-Payment</a>
                             <br>
                             <a href="https://www.linkedin.com/company/emdeon_3855" target="blank"><img src="assets/img/linkedin.png" alt="LinkedIn"></a>
                             <a href="https://twitter.com/emdeon" target="blank"><img src="assets/img/twitter.png" alt="Twitter"></a>
@@ -318,32 +330,34 @@
             <!-- Denied + Flagged -->
             <div id="claim-denied-flagged" style="display:none">
                 <div class="page">
-                    <div class="flag" data-offset-min="7200" data-offset-max="7800"><span>Flagged</span></div>
+                    <div class="flag"><span>Flagged</span></div>
                     <div class="info confirm-flag-correct" style="font-size:16px; margin-top:180px; margin-bottom:300px; padding-bottom:40px; width:435px">
                         <p>Please choose one of three corrective options:</p>
                         <div class="buttons three">
-                            <a class="choose" data-offset="7110" data-claim=".claim-denied-flagged" data-claim-parent="denied-corrected" href="#claim-denied-correction">Claim correction</a>
-                            <a class="choose" data-offset="7400" data-claim=".claim-denied-flagged" data-claim-parent="denied-repaid"  href="#claim-denied-repayment">Repayment</a>
-                            <a class="choose" data-offset="7110" data-claim=".claim-denied-flagged" data-claim-parent="denied-appealed" href="#claim-denied-appeal">Provider Appeal</a>
+                            <a class="choose" data-offset="#claim-denied-correction" data-claim=".claim-denied-flagged" data-claim-parent="denied-corrected" href="#claim-denied-correction">Claim correction</a>
+                            <a class="choose" data-offset="#claim-denied-repayment" data-claim=".claim-denied-flagged" data-claim-parent="denied-repaid"  href="#claim-denied-repayment">Repayment</a>
+                            <a class="choose" data-offset="#claim-denied-appeal" data-claim=".claim-denied-flagged" data-claim-parent="denied-appealed" href="#claim-denied-appeal">Provider Appeal</a>
                         </div>
                     </div>
                     <div id="claim-denied-correction" style="display:none">
-                        <div class="info congrats" data-animation="0%" data-animation-right="1" style="top:400px">
+                        <div class="flag"><span>Claim correction</span></div>
+                        <div class="info congrats" data-animation="0%" data-animation-right="1" style="margin-top:700px">
                             <p style="margin-bottom:0"><img src="assets/img/green-check.png" style="margin-right:10px; width:30px">Congratulations, your claim has completed its lifecycle!</p>
                         </div>
-                        <img src="assets/img/doctor-wrench.png" style="width:160px">
-                        <div class="fin">
+                        <a class="info try-again" href="http://www.lifecycleofaclaim.com" data-animation="0%" data-animation-right="1" style="margin-top:700px"><img src="assets/img/refresh.png" style="width:30px"><span style="padding-left:10px">Try another path</span></a>
+                        <img src="assets/img/doctor-wrench.png" style="margin-bottom:300px;width:160px">
+                        <div class="fin" style="margin-top:200px">
                             <div class="callout">
                                 <p>Are you mitigating risk at every stage of the lifecycle?</p>
                             </div>
-                            <div class="info">
+                            <div class="info fin-denied-correction">
                                 <p>Emdeon&rsquo;s Intelligent Healthcare Network provides unique insights to help you make the most informed decisions available.</p>
                                 <p>Let Emdeon help you avoid lost profits, reduce administrative time and cost, find lost dollars, capture new savings and maintain a strong provider network.</p>
                                 <p>Find out more about our Payment Integrity solutions:</p>
                                 <br>
-                                <a href="#" class="button" target="_blank">Pre-Submission</a>
-                                <a href="#" class="button" target="_blank">Post-Submission</a>
-                                <a href="#" class="button" target="_blank">Post-Payment</a>
+                                <a href="http://www.emdeon.com/advisor" class="button" target="_blank">Pre-Submission</a>
+                                <a href="http://www.emdeon.com/integratedrepricing" class="button" target="_blank">Post-Submission</a>
+                                <a href="http://www.emdeon.com/auditandrecovery" class="button" target="_blank">Post-Payment</a>
                                 <br>
                                 <a href="https://www.linkedin.com/company/emdeon_3855" target="blank"><img src="assets/img/linkedin.png" alt="LinkedIn"></a>
                                 <a href="https://twitter.com/emdeon" target="blank"><img src="assets/img/twitter.png" alt="Twitter"></a>
@@ -357,23 +371,25 @@
                         </div>
                     </div>
                     <div id="claim-denied-repayment" style="display:none">
-                        <div class="info congrats" data-animation="0%" data-animation-right="1" style="top:600px">
+                        <div class="flag"><span>Repayment</span></div>
+                        <div class="info congrats" data-animation="0%" data-animation-right="1" style="margin-top:700px">
                             <p style="margin-bottom:0"><img src="assets/img/green-check.png" style="margin-right:10px; width:30px">Congratulations, your claim has completed its lifecycle!</p>
                         </div>
-                        <img class="building-insurance" src="assets/img/building-insurance.png" style="margin-top:20px; margin-bottom:300px">
-                        <img class="doctor-paid" src="assets/img/doctor-repaid.png" data-animation="50%" data-animation-left>
-                        <div class="fin" style="padding-top:200px">
+                        <a class="info try-again" href="http://www.lifecycleofaclaim.com" data-animation="0%" data-animation-right="1" style="margin-top:700px"><img src="assets/img/refresh.png" style="width:30px"><span style="padding-left:10px">Try another path</span></a>
+                        <img class="building-insurance" src="assets/img/building-insurance.png" style="margin-top:-10px; margin-bottom:300px">
+                        <img class="doctor-repaid" src="assets/img/doctor-repaid.png" data-animation="50%" data-animation-left>
+                        <div class="fin" style="margin-top:200px">
                             <div class="callout">
                                 <p>Are you mitigating risk at every stage of the lifecycle?</p>
                             </div>
-                            <div class="info">
+                            <div class="info fin-denied-repayment">
                                 <p>Emdeon&rsquo;s Intelligent Healthcare Network provides unique insights to help you make the most informed decisions available.</p>
                                 <p>Let Emdeon help you avoid lost profits, reduce administrative time and cost, find lost dollars, capture new savings and maintain a strong provider network.</p>
                                 <p>Find out more about our Payment Integrity solutions:</p>
                                 <br>
-                                <a href="#" class="button" target="_blank">Pre-Submission</a>
-                                <a href="#" class="button" target="_blank">Post-Submission</a>
-                                <a href="#" class="button" target="_blank">Post-Payment</a>
+                                <a href="http://www.emdeon.com/advisor" class="button" target="_blank">Pre-Submission</a>
+                                <a href="http://www.emdeon.com/integratedrepricing" class="button" target="_blank">Post-Submission</a>
+                                <a href="http://www.emdeon.com/auditandrecovery" class="button" target="_blank">Post-Payment</a>
                                 <br>
                                 <a href="https://www.linkedin.com/company/emdeon_3855" target="blank"><img src="assets/img/linkedin.png" alt="LinkedIn"></a>
                                 <a href="https://twitter.com/emdeon" target="blank"><img src="assets/img/twitter.png" alt="Twitter"></a>
@@ -387,22 +403,24 @@
                         </div>
                     </div>
                     <div id="claim-denied-appeal" style="display:none">
-                        <div class="info congrats" data-animation="0%" data-animation-right="1" style="top:400px">
+                        <div class="flag"><span>Provider appeal</span></div>
+                        <div class="info congrats" data-animation="0%" data-animation-right="1" style="margin-top:700px">
                             <p style="margin-bottom:0"><img src="assets/img/green-check.png" style="margin-right:10px; width:30px">Congratulations, your claim has completed its lifecycle!</p>
                         </div>
-                        <img src="assets/img/doctor-scales.png" style="width:160px">
-                        <div class="fin">
+                        <a class="info try-again" href="http://www.lifecycleofaclaim.com" data-animation="0%" data-animation-right="1" style="margin-top:700px"><img src="assets/img/refresh.png" style="width:30px"><span style="padding-left:10px">Try another path</span></a>
+                        <img src="assets/img/doctor-speech.png" style="margin-bottom:300px;width:160px">
+                        <div class="fin" style="margin-top:200px">
                             <div class="callout">
                                 <p>Are you mitigating risk at every stage of the lifecycle?</p>
                             </div>
-                            <div class="info">
+                            <div class="info fin-denied-appeal">
                                 <p>Emdeon&rsquo;s Intelligent Healthcare Network provides unique insights to help you make the most informed decisions available.</p>
                                 <p>Let Emdeon help you avoid lost profits, reduce administrative time and cost, find lost dollars, capture new savings and maintain a strong provider network.</p>
                                 <p>Find out more about our Payment Integrity solutions:</p>
                                 <br>
-                                <a href="#" class="button" target="_blank">Pre-Submission</a>
-                                <a href="#" class="button" target="_blank">Post-Submission</a>
-                                <a href="#" class="button" target="_blank">Post-Payment</a>
+                                <a href="http://www.emdeon.com/advisor" class="button" target="_blank">Pre-Submission</a>
+                                <a href="http://www.emdeon.com/integratedrepricing" class="button" target="_blank">Post-Submission</a>
+                                <a href="http://www.emdeon.com/auditandrecovery" class="button" target="_blank">Post-Payment</a>
                                 <br>
                                 <a href="https://www.linkedin.com/company/emdeon_3855" target="blank"><img src="assets/img/linkedin.png" alt="LinkedIn"></a>
                                 <a href="https://twitter.com/emdeon" target="blank"><img src="assets/img/twitter.png" alt="Twitter"></a>
@@ -426,6 +444,14 @@
     <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.16.1/TweenMax.min.js"></script>
     <script src="assets/js/app.js"></script>
     <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-2383771-28', 'auto');
+        ga('send', 'pageview');
+
         App.start();
     </script>
 </body>
